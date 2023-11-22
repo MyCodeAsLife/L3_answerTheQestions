@@ -14,7 +14,8 @@ namespace L3_answerTheQestions
             string userName;
             string userZodiacSign;
             string userPlaceOfWork;
-            bool isWorking;
+            const string checkUserForJob = "да"; // Захардкоденые\захардкоженые переменные вроде обычно объявляют как константы
+            bool userIsWorking;
             int userAge;        // Можно и какой нибуть ushort, но я не вижу причин для усложнения
 
             Console.Write("Здравствуйте!\nКак вас зовут?: ");
@@ -24,8 +25,9 @@ namespace L3_answerTheQestions
             Console.Write("Какой у вас знак зодиака?: ");
             userZodiacSign = Console.ReadLine();
             Console.Write("Вы работаете? Да/Нет: ");
-            isWorking = Console.ReadLine().ToLower() == "да";
-            if (isWorking)
+            userIsWorking = Console.ReadLine().ToLower() == checkUserForJob;
+
+            if (userIsWorking)
             {
                 Console.Write("Где вы работаете?: ");
                 userPlaceOfWork = Console.ReadLine();
